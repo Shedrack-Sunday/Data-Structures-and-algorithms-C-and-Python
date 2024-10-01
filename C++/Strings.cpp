@@ -1,0 +1,25 @@
+- Substring Search
+- Anagrams
+- Palindromes
+- Regular Expressions
+- String Compression
+- String Decompression
+- String Matching
+- String Parsing
+- String Permutations
+- String Reversal
+- String Rotation
+- String Segmentation
+- String to Integer
+- String to Double
+- String to Long
+- String to Lowercase
+- String to Uppercase
+- String to Title Case
+- String Trimming
+- String Tokenization
+- String to Character Array
+- Character Array to String
+- Character Array to Integer
+- Character Array to Double
+- Character Array to Long

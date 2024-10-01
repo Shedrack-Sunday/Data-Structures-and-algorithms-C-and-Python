@@ -1,0 +1,3 @@
+- Heapify and Heap sort knowing theory is enough
+- Kth Largest/Smallest element
+- K most/least frequent elements

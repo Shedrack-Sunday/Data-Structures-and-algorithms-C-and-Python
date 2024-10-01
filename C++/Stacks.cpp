@@ -1,0 +1,4 @@
+- Expression evaluation
+- Balancing parenthesis
+- Next Greater/Smaller element (NGE)
+- Trapping Rainwater style problems (extension of NGE)
