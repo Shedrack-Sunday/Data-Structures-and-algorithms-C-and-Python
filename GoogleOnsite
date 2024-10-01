@@ -1,0 +1,53 @@
+🪨 Hardest DSA concepts asked in Google on-site
+
+1. Dynamic Programming (DP)
+2. Graph
+3. Segment Tree
+4. Fenwick Tree
+5. BIT Manipulation
+
+📚 Detailed Tips to tackle each one:
+
+1. DP ⏮️:
+ - Topic wise prep
+ - Solve at least 2 problems on all unique DP patterns.
+ - All the patterns you need to cover -
+ 1. 1-D DP: Fibonacci, Coin Change
+ 2. 2D DP: Unique Paths, Minimum Path Sum
+ 3. MCM: Burst balloons, Optimal parenthesization
+ 4. Knapsack: 0/1 Knapsack, Subset Sum, Partition Equal Subset Sum
+ 5. LCS + LIS
+ 6. Interval DP: Like Non-overlapping Intervals, Maximum Earnings from Taxi
+ 7. String DP: Edit distance, regEx matching
+2. Graph 📈:
+ - Again, vast concept -> so divide and conquer.
+ - Learn basic graph theory from any CS book/YT playlist.
+ - Solve at least 2 problems on all Graph patterns -
+ 1. DSU
+ 2. Cycle Detection (DFS/Kahn/Topo Sort)
+ 3. MST (using Prims/Kruskal)
+ 4. Coloring nodes (Bipartite/M-coloring)
+ 5. Shortest Path (Djikstra’s/Bellmann-Ford/Floyd-Warshall)
+3. Segment Trees 🌲:
+ - These problems can mostly, also be solved using other DSA.
+ - Such as: Merge Sort, Hashset/Multiset, DSU, Line Sweep and Offline queries.
+ - Hence, 2 ways to deal with segment trees:
+ 1. Skip it and master solving Segment tree problems using all of the alternate DSA.
+ 2. Or master segment trees and use them to solve most problems that require O(n logn) TC.
+4. Fenwick trees ☘️:
+ - Similar to segment trees
+ - Main difference - much smaller code - 10-15 lines!! 
+ - Can give you the edge in a 45-min interview. 
+ - If you chose to master segment trees, learn Fenwick trees as well.
+5. Bit Manipulation 0️⃣/1️⃣:
+ - A topic I struggled with throughout my college life.
+ - Finally focused on it when got stumped in an interview.
+ - My self-taught 3-step process that can make you a Bit Manipulation hero - 
+ 1. Know your operands: LEFT/RIGHT shift, XOR, AND, OR, NOT.
+ 2. Study their properties. For eg:
+ - LEFT/RIGHT shift -> get a particular bit.
+ - XOR -> find a single element when others exist twice.
+ - AND/OR -> mask/unmask a number.
+ 3. Practice 5 problems on each property. Repeat.
+ - Sucks at first. When you’re unable to visualize bits, shifts and what-not. 
+ - But rewarding at last. When you see that contest problem and say - “Oh, I'll do this using bit-masking”. 🌻

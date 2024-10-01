@@ -1,0 +1,7 @@
+- Insertion, Deletion, Reversal
+- Slow & Fast pointers algorithm
+- Cycle Detection
+- Intersection
+- Merge Sorted Lists
+- Reversal in K groups
+- LRU + LFU
