@@ -192,3 +192,11 @@ public:
         return maxLen;
     }
 };
+<<<<<<< HEAD:C++/Strings/Strings.cpp
+
+
+// Longest Valid Parentheses
+// Given a current working directory string, and the input to a cd command as a string, output the full path to /the new working directory.
+//Simplified Path
+=======
+>>>>>>> main:C++/Strings.cpp
