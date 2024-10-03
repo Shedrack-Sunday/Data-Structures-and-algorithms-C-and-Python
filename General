@@ -1,0 +1,78 @@
+"""b   his is an interesting coding interview question that tests your ability to design a feature for ad analytics. The goal is to check if an advertisement has had X impressions without any clicks within a Y-day rolling window. Here’s a step-by-step approach to how you might design this feature:
+
+Problem Breakdown:
+Impressions: The number of times an ad is displayed.
+Clicks: The number of times the ad is clicked.
+X impressions without clicks: We need to check if there are X impressions without any clicks.
+Y-day rolling window: The rolling window means that for every day, we must check the past Y days (including the current day) for X impressions without clicks.
+Assumptions:
+You are given a time series dataset where each entry contains:
+date: The day the data was recorded.
+impressions: The number of impressions on that day.
+clicks: The number of clicks on that day.
+You are required to return True if in any Y-day rolling window, there are X impressions with 0 clicks.
+Example:
+Dataset:
+css
+Copy code
+[    {"date": "2024-10-01", "impressions": 50, "clicks": 0},    {"date": "2024-10-02", "impressions": 60, "clicks": 0},    {"date": "2024-10-03", "impressions": 70, "clicks": 0},    {"date": "2024-10-04", "impressions": 80, "clicks": 1},    {"date": "2024-10-05", "impressions": 90, "clicks": 0}]
+For a 3-day window and X = 100 impressions without clicks, the function would look through the dataset and return True if such a condition occurs.
+Algorithm Steps:
+Sliding Window Approach:
+Iterate through the dataset and maintain a sliding window of Y days.
+Track the total number of impressions and clicks for the current window.
+For each new day, add the day’s impressions and clicks, and check if impressions >= X and clicks == 0 for the window.
+Shift the window by removing the oldest day’s data from the window before moving to the next day.""""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def has_X_impressions_no_clicks(data, X, Y):
+    # Initialize variables for tracking the impressions and clicks
+    total_impressions = 0
+    total_clicks = 0
+    
+    # Initialize a deque for the sliding window
+    window = []
+    
+    for entry in data:
+        # Add the current day's impressions and clicks
+        window.append(entry)
+        total_impressions += entry['impressions']
+        total_clicks += entry['clicks']
+        
+        # If the window size exceeds Y days, remove the oldest entry
+        if len(window) > Y:
+            oldest_entry = window.pop(0)
+            total_impressions -= oldest_entry['impressions']
+            total_clicks -= oldest_entry['clicks']
+        
+        # Check if the total impressions >= X and total clicks == 0
+        if total_impressions >= X and total_clicks == 0:
+            return True
+    
+    # If no such window is found, return False
+    return False
+Explanation:
+We use a deque (double-ended queue) to efficiently maintain the sliding window of Y days.
+As we iterate through each day’s data:
+Add the current day's impressions and clicks to the total.
+If the window exceeds Y days, remove the oldest entry from the window and update the total impressions and clicks accordingly.
+After updating the window, check if the window meets the condition of having at least X impressions with 0 clicks.
+If such a window is found, return True. If the loop completes without finding a valid window, return False.
+Time Complexity:
+O(n) where n is the number of days in the dataset, since each day's data is added to and removed from the window at most once.
+Edge Cases:
+Insufficient Data: If the dataset has fewer than Y days, the window cannot be formed.
+No Matching Window: Ensure it handles cases where no valid window is found and returns False.
+Clicks with Impressions: Handle cases where clicks occur along with impressions, ensuring that the click count is considered.
