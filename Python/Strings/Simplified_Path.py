@@ -43,4 +43,4 @@ def simplifyPath(self, path: str) => str:
             cur = ""
         else:
             cur += c
-    return "/" + "/".join(stack)     
+    return "/" + "/".join(stack)
