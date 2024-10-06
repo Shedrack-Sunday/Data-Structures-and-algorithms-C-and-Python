@@ -1,0 +1,35 @@
+class Solution {
+public:
+    int shortestPathBinaryMatrix(vector<vector<int>>& grid) {
+        int n = grid.size() - 1;  // Size of the grid
+        if (grid[0][0] == 1 || grid[n][n] == 1) return -1;  // Start or end is blocked
+        if (grid.size() == 1) return 1;  // Special case for a 1x1 grid
+
+        deque<pair<int, int>> q;
+        q.push_back({0, 0});
+        grid[0][0] = 2;  // Mark the starting cell
+        int level = 1;
+
+        while (!q.empty()) {
+            int qsize = q.size();
+            for (int i = 0; i < qsize; i++) {
+                auto [pr, pc] = q.front();  // Get the front element
+                q.pop_front();
+                
+                // Explore all 8 possible directions
+                for (auto [x, y] : vector<pair<int, int>>{{0, -1}, {-1, -1}, {-1, 0}, {-1, 1}, {0, 1}, {1, 1}, {1, 0}, {1, -1}}) {
+                    int r = pr + x;
+                    int c = pc + y;
+                    if (r < 0 || r > n || c < 0 || c > n || grid[r][c] != 0) continue;
+
+                    if (r == n && c == n) return level + 1;  // Reached the bottom-right corner
+                    grid[r][c] = 2;  // Mark the cell as visited
+                    q.push_back({r, c});
+                }
+            }
+            level++;  // Increment the level for each layer of BFS
+        }
+
+        return -1;  // No path found
+    }
+};
