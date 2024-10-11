@@ -1,0 +1,43 @@
+import csv
+import math
+
+# Gravitational constant
+g = 9.8
+
+# Read dinosaur data
+def read_csv(file_path):
+    data = {}
+    with open(file_path, 'r') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            data[row['NAME']] = row
+    return data
+
+# Calculate speed using formula
+def calculate_speed(stride_length, leg_length):
+    return ((stride_length / leg_length) - 1) * math.sqrt(leg_length * g)
+
+def get_bipedal_dinosaurs(stats_file, additional_file):
+    stats = read_csv(stats_file)
+    additional = read_csv(additional_file)
+
+    # Filter and calculate speeds for bipedal dinosaurs
+    bipedal_dinos = []
+    for name, data in additional.items():
+        if data['STANCE'] == 'bipedal':
+            stride_length = float(data['STRIDE_LENGTH'])
+            leg_length = float(stats[name]['LEG_LENGTH'])
+            speed = calculate_speed(stride_length, leg_length)
+            bipedal_dinos.append((name, speed))
+
+    # Sort from fastest to slowest
+    bipedal_dinos.sort(key=lambda d: d[1], reverse=True)
+    return bipedal_dinos
+
+# File paths
+stats_file = 'dinosaur_stats.csv'
+additional_file = 'dinosaur_additional_data.csv'
+
+bipedal_dinosaurs = get_bipedal_dinosaurs(stats_file, additional_file)
+for dino in bipedal_dinosaurs:
+    print(f"{dino[0]}: {dino[1]:.2f} m/s")
