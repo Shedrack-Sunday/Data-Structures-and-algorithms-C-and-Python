@@ -82,3 +82,28 @@ Your browser displays the [invalid URL removed] homepage for you.
 Generally, the browser retries a failed HTTP request.  The number of retries and the time between attempts are controlled by the browser settings. Browsers implement retry logic because network issues or server overload can cause temporary failures. Retries can sometimes overcome these issues and successfully retrieve the content.   
 
 The operating system wouldn't typically handle retries for specific HTTP requests to individual websites. It might handle broader network connectivity issues, but wouldn't be directly involved in retrying communication with a particular website
+
+------------------------------------------------
+
+Inode stands for index node. It's a fundamental data structure in a Unix-like file system that stores metadata about a file or directory. This metadata includes information such as:
+
+File type: Whether it's a regular file, directory, symbolic link, etc.
+Permissions: Who can access the file (owner, group, others) and what they can do (read, write, execute).
+Ownership: The user and group that own the file.
+Time stamps: Creation, modification, and access times.
+Size: The size of the file in bytes.
+Number of blocks: The number of disk blocks allocated to the file.
+Data block pointers: Pointers to the data blocks that store the file's contents.
+Key Points:
+
+Unique identifier: Each file or directory has a unique inode number within a filesystem.
+Metadata storage: Inodes store essential metadata about files, not the actual data.
+Data block pointers: Inodes contain pointers to the data blocks that store the file's content.
+Filesystem structure: Inodes are organized in a hierarchical structure, with directories containing inodes of their child files and directories.
+Example:
+
+Imagine a filesystem with a directory named "Documents". Within this directory, there's a file named "report.txt". The inode for "report.txt" would store information like its file type (regular file), permissions (read-write for the owner), ownership (user "john", group "staff"), size (1000 bytes), and pointers to the data blocks containing the actual text of the report.
+
+In Summary:
+
+Inodes are the building blocks of a file system, providing essential metadata about files and directories. They play a crucial role in organizing and managing files within a filesystem.
