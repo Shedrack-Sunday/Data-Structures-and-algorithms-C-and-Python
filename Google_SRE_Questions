@@ -43,3 +43,42 @@ IP address filtering: Restrict incoming connections to trusted IP addresses.
 TCP sequence number validation: Verify that the sequence numbers in incoming packets are valid.
 Session timeouts: Automatically terminate idle sessions to prevent hijacking.
 Encryption: Use encryption protocols like TLS to secure communication.
+
+
+
+----------------------------
+1. How does DNS work?
+
+DNS stands for Domain Name System. It's like the phonebook of the internet.  Here's how it works:   
+
+You type a domain name (like www.google.com) into your browser.
+Your browser doesn't understand domain names, it needs an IP address (a series of numbers) to find the website.   
+The browser checks its cache (temporary storage) to see if it already knows the IP address for www.google.com.
+If not, it sends a request to a DNS server.   
+The DNS server looks up the IP address for www.google.com in its database and sends it back to your browser.
+Now your browser has the IP address and can connect to the website and show you the content.   
+There are multiple DNS servers involved, and the process can involve some back-and-forth communication, but that's the basic idea.   
+
+2. How does HTTP work?
+
+HTTP stands for Hypertext Transfer Protocol. It's the language browsers and web servers use to communicate. Here's a simplified breakdown:   
+
+Once your browser has the IP address from DNS, it opens a connection to the web server using HTTP.   
+Your browser sends an HTTP request to the server, specifying what you want to see (e.g., the homepage of [invalid URL removed]).   
+The web server receives the request, processes it, and sends back an HTTP response.   
+The response contains the content you requested (the HTML code, images, etc. for the [invalid URL removed] homepage).   
+Your browser interprets the response and displays the webpage for you.   
+3. What happens when you type www.google.com in the browser?
+
+As explained above:
+
+Your browser looks up the IP address for www.google.com using DNS.
+Once it has the IP address, it uses HTTP to communicate with the [invalid URL removed] server.   
+The browser requests the homepage content.
+The [invalid URL removed] server sends the homepage content back using HTTP.
+Your browser displays the [invalid URL removed] homepage for you.
+4. If a HTTP request fails, does the operating system retry it, or the browser?
+
+Generally, the browser retries a failed HTTP request.  The number of retries and the time between attempts are controlled by the browser settings. Browsers implement retry logic because network issues or server overload can cause temporary failures. Retries can sometimes overcome these issues and successfully retrieve the content.   
+
+The operating system wouldn't typically handle retries for specific HTTP requests to individual websites. It might handle broader network connectivity issues, but wouldn't be directly involved in retrying communication with a particular website
