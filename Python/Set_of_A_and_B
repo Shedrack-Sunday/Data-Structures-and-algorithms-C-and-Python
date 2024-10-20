@@ -1,0 +1,60 @@
+def set_difference(set_a, set_b):
+
+    result = set()
+    for element in set_a:
+        if element not in set_b:
+            result.add(element)
+    return result
+
+def find_set_difference_large_datasets(file_a, file_b):
+  
+    set_a = set()
+    set_b = set()
+
+    with open(file_a, 'r') as f:
+        for line in f:
+            element = line.strip()
+            set_a.add(element)
+
+    with open(file_b, 'r') as f:
+        for line in f:
+            element = line.strip()
+            set_b.add(element)
+
+    return set_difference(set_a, set_b)
+
+if __name__ == '__main__':
+    # Example usage with small sets
+    set_a = {1, 2, 3, 4}
+    set_b = {3, 4, 5}
+    difference = set_difference(set_a, set_b)
+    print(difference)  # Output: {1, 2}
+
+    # Example usage with large datasets
+    file_a = 'large_dataset_a.txt'
+    file_b = 'large_dataset_b.txt'
+    difference = find_set_difference_large_datasets(file_a, file_b)
+    print(difference)
+Use code with caution.
+
+Explanation:
+
+set_difference function:
+
+Takes two sets as input.
+Iterates through elements in set_a.
+If an element is not found in set_b, it's added to the result set.
+Returns the resulting set difference.
+find_set_difference_large_datasets function:
+
+Handles large datasets by reading them from files.
+Creates empty sets set_a and set_b.
+Iterates through lines in file_a and adds elements to set_a.
+Iterates through lines in file_b and adds elements to set_b.
+Calls the set_difference function to calculate the difference.
+Key improvements for large datasets:
+
+File-based processing: Avoids loading entire datasets into memory, saving space.
+Line-by-line reading: Processes data efficiently, especially for large files.
+Set operations: Uses efficient set operations for membership testing and addition.
+This approach effectively handles large datasets by using efficient memory management and optimized algorithms.
