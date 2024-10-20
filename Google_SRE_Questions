@@ -1,0 +1,45 @@
+##1. Sorting a 100GB file with 1GB of memory:
+
+To sort a 100GB file efficiently with limited memory, you can employ an external sorting algorithm like Merge Sort. Here's a basic outline:
+
+Divide: Break down the 100GB file into smaller chunks (e.g., 1GB each).
+Sort: Use an in-memory sorting algorithm (like QuickSort or MergeSort) to sort each chunk independently.
+Merge: Combine the sorted chunks in a pairwise manner, writing the merged results back to disk. Repeat this process until a single sorted file is obtained.
+2. Favorite data structure:
+
+My favorite data structure is the hash table due to its exceptional efficiency for search, insertion, and deletion operations. Hash tables use a hash function to map keys to indices within an array, providing average-case time complexity of O(1). This makes them ideal for applications requiring fast lookups, such as dictionaries, databases, and caches.
+
+3. How DNS works:
+
+DNS (Domain Name System) translates human-readable domain names into IP addresses. It operates in a hierarchical manner, involving a series of DNS servers:
+
+Recursive Resolver: The user's computer queries a local DNS resolver.
+Authoritative Server: The resolver follows a chain of DNS servers, eventually reaching the authoritative server for the domain.
+Response: The authoritative server provides the IP address to the resolver, which then returns it to the user's computer.
+4. Can DNS work over TCP:
+
+While DNS primarily uses UDP for its efficiency and speed, it can also work over TCP for more complex queries or when UDP encounters errors. TCP provides reliability and guarantees delivery, making it suitable for larger DNS responses or when error recovery is crucial.
+
+5. How DNS root servers work:
+
+DNS root servers are at the top of the DNS hierarchy. They store the zone files for top-level domains (TLDs) like .com, .org, and .net. When a resolver queries for a domain, it starts at a root server, which provides the IP address of the authoritative server for that TLD.
+
+6. How BGP works:
+
+BGP (Border Gateway Protocol) is used to exchange routing information between networks on the internet. It operates on a policy-based routing system, allowing network operators to control the paths that traffic takes. BGP uses a path attribute system to evaluate routes based on factors like AS path length, origin, and local preference.
+
+7. How TCP works and the 3-way handshake:
+
+TCP (Transmission Control Protocol) is a reliable, connection-oriented protocol that ensures data delivery and error correction. The 3-way handshake is the process of establishing a TCP connection:
+
+SYN: The client sends a SYN packet to the server, requesting a connection.
+SYN-ACK: The server responds with a SYN-ACK packet, acknowledging the client's request and initiating a connection.
+ACK: The client sends an ACK packet to confirm the connection establishment.
+8. TCP session spoofing and prevention:
+
+TCP session spoofing involves an attacker hijacking an existing TCP session by sending forged packets. This can be prevented using techniques like:
+
+IP address filtering: Restrict incoming connections to trusted IP addresses.
+TCP sequence number validation: Verify that the sequence numbers in incoming packets are valid.
+Session timeouts: Automatically terminate idle sessions to prevent hijacking.
+Encryption: Use encryption protocols like TLS to secure communication.
