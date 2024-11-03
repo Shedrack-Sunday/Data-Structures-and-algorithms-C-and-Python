@@ -6,7 +6,7 @@
 #Return a join of the merge string created
 
 
-Def  Merge Strings Alternately(word1, word2)
+def  Merge_Strings_Alternately(word1, word2):
      
     merge = []
     length = min(len(word1), len(word2))
