@@ -39,6 +39,7 @@ import csv
 import math
 
 
+
 def  calculate_speed(stride_length, leg_length):
     g = 9.8
     return ((stride_length/leg_length) - 1) * math.sqrt(leg_length * g)
@@ -75,3 +76,4 @@ def main():
     
     for name, _ in bipedal_dinosaurs:
         print(name)
+        
