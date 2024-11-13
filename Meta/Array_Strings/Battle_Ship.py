@@ -33,5 +33,25 @@ def find_battleship(board):
                 else:
                     continue
             
-                
+def find_battleship(grid_length):
+    for i in range(grid_length):
+        for j in range(grid_length):
+            # Check if this cell contains part of the battleship
+            if bomb_at(i, j):
+                # Determine if it's a vertical or horizontal battleship
+                if i + 2 < grid_length and bomb_at(i + 1, j) and bomb_at(i + 2, j):
+                    # Vertical battleship
+                    print("Head:", (i, j))
+                    print("Middle:", (i + 1, j))
+                    print("Tail:", (i + 2, j))
+                    return
+                elif j + 2 < grid_length and bomb_at(i, j + 1) and bomb_at(i, j + 2):
+                    # Horizontal battleship
+                    print("Head:", (i, j))
+                    print("Middle:", (i, j + 1))
+                    print("Tail:", (i, j + 2))
+                    return
+
+# Example function call (assumes grid_length and bomb_at(i, j) are defined)
+
                 
