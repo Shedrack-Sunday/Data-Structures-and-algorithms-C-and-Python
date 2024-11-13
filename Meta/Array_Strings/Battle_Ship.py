@@ -1,20 +1,16 @@
 '''
 There is a matrix with . and X, where X represents battleship, always of length 3. Battleship can be vertical or horizontal, never diagonal. Given a function bomb_at(i,j), returns True if battleship is present at (i,j) in the matrix. Print the head, middle, tail coordinates of the battleship.
-
 I asked a question to clarify, and as it turns out there will always be one battleship.
-
 .........
 .....X...
 .....X...
 .....X...
 .........
-
 Here’s how we could write the function:
 
 We’ll search for an X that represents the head of the battleship.
 Once the head is found, check if the battleship is oriented vertically or horizontally by checking adjacent cells.
 After determining the direction, print the coordinates of the head, middle, and tail of the battleship.
-
 '''
 
 def find_battleship(board):
@@ -52,6 +48,6 @@ def find_battleship(grid_length):
                     print("Tail:", (i, j + 2))
                     return
 
-# Example function call (assumes grid_length and bomb_at(i, j) are defined)
+
 
                 
