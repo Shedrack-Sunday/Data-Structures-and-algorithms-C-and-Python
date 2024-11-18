@@ -67,3 +67,14 @@ Explanation:
 
 "..." is a valid name for a directory in this problem.
 """
+
+
+
+def simplify_path(file):
+    
+    stack = []
+    for s in file:
+        if s == "..":
+            if stack[-1] == stack.pop()
+        else:
+            stack.append(s)    
