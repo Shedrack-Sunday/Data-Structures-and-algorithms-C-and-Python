@@ -3,6 +3,8 @@
 #include <vector>
 #include <iomanip>   // Defines setprecision
 #include <limits>    // Defines numeric_limits
+#include <math.h>
+
 
 /// C++ is efficient and only loads the code it's told to.
 
@@ -15,7 +17,7 @@
 using namespace std;
 
 int main() {
-    vector<string> messages = { "Hello", "from", "C++", "in", "WSL2!"};
+    /*vector<string> messages = { "Hello", "from", "C++", "in", "WSL2!"};
 
     for (const string& word : messages) {
         cout << word << " ";
@@ -128,12 +130,57 @@ int main() {
    cout << " Your name is " << name << "," << " You are " << age << " Years old" << endl;
 
 
+   int num1, num2;
+   cout << " Enter two mumbers:";
+   cin >> num1;
+   cin >> num2;
 
+   cout << (num1 == num2);
+   cout << (num1 != num2);
+   cout << (num1 == num2);
+   cout << (num1 > num2);
+   cout << (num1 < num2);
+   cout << (num1 <= num2);
+   cout << (num1 >= num2);
+
+
+   int input;
+   cout << "please enter an input:" << endl;
+   cin >> input;
+
+   if (input % 15 == 0) {
+    cout << " FizzBuzz" << endl;
+   } else if (input % 5 ==0) {
+    cout << " Buzz" << endl;
+   } else {
+    cout << input << endl;
+   }
+*/
+
+    int repetitions = 0;
+    cin >> repetitions;
+
+    for ( double i = 0; i < repetitions; i++) {
+        cout << "This is a sample repetitive task" << endl;
+    }
+    
+
+    int check = 36;
+
+    for (int divisor = 2; divisor * divisor <= check; ++divisor) {
+        if (check % divisor == 0) {
+            cout << check << "is not prime!" << endl;
+            cout << "It equals" << divisor << "x" << (check / divisor) << endl;
+            break;
+        }
+    }
+
+    for (int divisor = 1; divisor <= check; ++divisor) {
+        if (check % divisor == 0) {
+            continue;
+        }
+        cout << divisor << "does not divide" << check << endl;
+        }
    
-
-
-
-
-
     return 0;
 }
