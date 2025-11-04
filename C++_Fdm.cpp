@@ -16,7 +16,51 @@
 
 using namespace std;
 
+
+    int ysquare(int x) {
+        return x * x;
+    }
+
+    int ymin(int x, int y) {
+       if (x < y) {
+          return x;
+        } else {
+           return y;
+        }
+    }
+
+    int yadd(int x, int y) {
+        return x + y;
+    }
+
+    void change(int val) {
+        val = 0;
+    }
+  
+
+    int currentMoney = 0;
+
+    void deposit(int newMoney) {
+        currentMoney += newMoney;
+    }
+
+    void withdraw(int withdrawal) {
+        currentMoney -= withdrawal;
+    }
+
 int main() {
+    
+
+    // cout << ysquare(5) << endl;
+    // cout << yadd(ysquare(3), 10) << endl;
+    // cout << ymin(ysquare(10), yadd(ysquare(9), 23)) << endl;
+
+  
+    // int x, y;
+    // cin >> x >> y;
+    // cout << x << "^2 = "<< square(x) << endl;
+    // cout << x << "+" <<y << " =" << add(x, y) << endl;
+    // cout << "min(" << x << ", " << y << ") = " << min(x,y) << endl;
     /*vector<string> messages = { "Hello", "from", "C++", "in", "WSL2!"};
 
     for (const string& word : messages) {
@@ -155,7 +199,7 @@ int main() {
    } else {
     cout << input << endl;
    }
-*/
+
 
     int repetitions = 0;
     cin >> repetitions;
@@ -181,6 +225,126 @@ int main() {
         }
         cout << divisor << "does not divide" << check << endl;
         }
-   
+
+
+
+
+
+    int num = 9;
+    while (num != 1) {
+        if (num % 2 == 0) {
+            num /= 2;
+        } else {
+            num = 3 * num + 1;
+        }
+        cout << num << endl;
+    }
+
+
+    for (int i = 0; false; i++) {
+        cout << i << endl;
+    }
+    for  (int i = 0; i >= -10; --i ) {
+        cout << i << endl;
+    }
+
+    for (int i = 0; i <= 10; ++i) {
+
+        if (i %2 == 0) continue;
+        if (i == 8) break;
+        cout << i << endl;
+    }
+*/
+
+    // int variable = 100;
+    // cout << "variable is " << variable << endl;
+    // change(variable);
+    // cout<< "Variable is" << variable << endl;
+
+
+    // cout << "currently, you have " << currentMoney << "  Money" << endl;
+    // deposit(1000);
+    // withdraw(2000);
+    // cout << "Oh!!!! Your current baance is " << currentMoney << " :(" << endl;
+    
+    // // int main() {
+    // // CORRECT: Called as a standalone statement.
+    // // printMessage("Hello, world!");
+
+    // //  INCORRECT: This will cause a compile error.
+    // // string msg = printMessage("Hello"); // Error: function returns 'void'
+
+    
+
+    // //////////Strutures
+    // struct Point {
+    //     double x;
+    //     double y;
+
+    //     Point(double theX, double theY) {
+    //           x = theX;
+    //           y = theY;
+    //     }
+
+    //     Point mirror() const { // Functions inside strutures without modification.
+    //         return Point(x, -y);
+    //     }
+
+    //     Point translate(double dx, double dy) {
+    //         return Point(x + dx, y + dy);
+
+    //     }
+           
+    // };
+
+    
+    // Point p(4, 2.1);
+    // cout << "The origin is (" << p.mirror().x << ", " << p.mirror().y << ")." << endl;
+    
+    
+
+
+
+    struct Quotient {
+        int nominator;
+        int denominator;
+        
+        //Construct  a Quotient with the given numerator and denominator
+        Quotient(int n, int d) {
+            nominator = n;
+            denominator =d;
+        }
+
+        // Return a new Quotient, this instance plus the "other" instance
+        Quotient add(const Quotient &other) const {
+            // Calculate the new nominator
+            int new_nom = (nominator * other.denominator) + (other.nominator * denominator);
+
+            // Calculate the new denominator
+            int new_den = denominator * other.denominator;
+
+            // Return the new fraction
+            return Quotient(new_nom, new_den);
+
+            
+        }
+ 
+
+        // Return a new Quotient, this instance times
+        // the "other" instance
+        Quotient multiply(const Quotient &other) const {
+            int new_nom = nominator * other.nominator;
+            int new_den = denominator * other.denominator;
+            return Quotient(new_nom, new_den);
+        }
+
+
+        // Output the value on the screen in the format n/d
+        void print() const {
+            // This requires you to #include <iostream>
+            // and use 'using namespace std;' or 'std::cout'
+            cout << nominator << "/" << denominator;
+        }
+    };
     return 0;
 }
